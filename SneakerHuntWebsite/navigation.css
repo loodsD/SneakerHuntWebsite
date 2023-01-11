@@ -1,6 +1,5 @@
 .navigationTop{
     background-color: black;
-    padding-bottom: 9px;
 }
 .search{
     float: right;
@@ -14,7 +13,6 @@
 }
 .page{
     float: left;
-    padding-top: 5px;
 }
 footer {
     padding-left: 5px;
@@ -38,7 +36,7 @@ li a{
 .navigationTop img{
     float:left;
     width: 10%;
-    height: 62px;
+    height: 45px;
     padding-right: 20px;
     border: 1px solid black;
 }
@@ -48,6 +46,6 @@ li a{
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.p{text-align: center;
-
+.p{
+    text-align: center;
 }
