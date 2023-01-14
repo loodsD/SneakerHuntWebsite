@@ -1,0 +1,671 @@
+<html>
+    <head>
+        <title>Sneaker</title>
+        <style>
+            .sideMenu{
+                background-color: ghostwhite;
+                width :200px;
+                float:left;
+                text-align: left;
+                padding-left: 5px;
+            }
+            .checkboxSneaker{
+                margin-left: 15px;
+                padding: 10px;
+                padding-top: 3px;
+            }
+            .row{
+                background-color: white;
+                flex: 33.33%;
+            }
+            .sneaker{
+                padding: 5px;
+                margin: 10px;
+                border: 1px solid;
+                max-width: 350px;
+                height:410px;
+                float: left;
+                text-align: center;
+                font-family: arial;
+            }
+            .row img{
+                min-width:340px;
+                max-width:340px;
+                height:250px;
+            }
+            .row a{
+                color: black;
+            }
+            .checked{
+                color: orange;
+            }
+            .empty{
+                opacity: 0.3;
+            }
+            .sneaker{
+                display: none;
+            }
+            #container {
+                display: flex;
+                align-items: stretch;
+            }
+            #buttonSearch:hover{
+                color: blue;
+            }
+            #buttonSearch:active {
+                transform: translateY(2px);
+            }
+        </style>
+        <link rel="stylesheet" href="navigation.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <div>
+            <div>
+                <div class="navigationTop">
+                    <a href="Homepage.html"><img src="imgsrc/logo.jfif"></a>
+                    <ul class="top">
+                        <li class="page"><a href ="Homepage.html">Home</a></li>
+                        <li class="page w3-grey"><a href ="filterpage.html">Sneaker</a></li>
+                        <li class="page"><a href ="#contact">Random Sneaker Generator</a></li>
+                        <li class="search">
+                            <form  action="filterpage.html" method="get">
+                                <input type="text" list="sneakerData" size="35" placeholder="Search" style="margin-top:17px" name="sneaker">
+                                <datalist id="sneakerData">
+                                    <option value ="FORCEBOUNCE"></option>
+                                    <option value ="LITERACER5.0"></option>
+                                    <option value ="ULTRABOOST1.0"></option>
+                                    <option value ="LITERACER4.0"></option>
+                                    <option value ="SWIFTRUNSHOES"></option>
+                                </datalist>&nbsp&nbsp
+                                <button type="submit" style="float:right;margin-top: 19px;"><i class="fa fa-search"></i></button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="container">
+                    <div class ="sideMenu" id="side">
+                        <br>
+                        <dl>
+                            <dt>
+                                <b>Brand</b>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="adidas"> Adidas</dd>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="nike"> Nike</dd>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="vans"> Vans</dd>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="puma"> Puma</dd>
+                            </dt>
+                            
+                            <dt>
+                                <b>Colour</b>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="black"> Black &nbsp&nbsp <input type="checkbox" id="white"> White</dd>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="red"> Red &nbsp&nbsp&nbsp&nbsp <input type="checkbox" id="blue"> Blue</dd>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="grey"> Grey &nbsp&nbsp&nbsp <input type="checkbox" id="yellow"> Yellow</dd>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="all">     All Colour</dd>
+                            </dt>
+    
+                            
+                            <dt>
+                                <b>Gender</b>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="men"> Men</dd>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="women"> Women</dd>
+                            </dt>
+    
+                            <dt>
+                                <b>Trending</b>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="highRating"> High rating</dd>
+                                <dd class="checkboxSneaker"><input type="checkbox" id="hot"> Hot</dd>
+                            </dt>
+    
+                            <br>
+                            <button id="buttonSearch" style="text-align: center;margin-left: 30px;" onclick="search()">Search</button>
+                        </dl>
+                    </div>
+
+                    <div class ="row" id="main">
+
+                        <a href="sneakerFile/sneaker1.html">
+                            <div class="sneaker adidas male white blue all" id ="FORCEBOUNCE">
+                                <img src="imgsrc/adidas/male/FORCEBOUNCE VOLLEYBALL SHOES.jpg" alt="FORCEBOUNCE" style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>FORCEBOUNCE VOLLEYBALL SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+    
+                        <a href="sneakerFile/sneaker2.html">
+                            <div class="sneaker adidas male white all" id="LITERACER5.0">
+                                <img src="imgsrc/adidas/male/LITE RACER ADAPT 5.0 SHOES.jpg" alt="LITERACER5.0" style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>LITE RACER ADAPT 5.0 SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>   
+    
+                        <a href="sneakerFile/sneaker3.html">
+                            <div class="sneaker adidas male white all highRating hot"  id="ULTRABOOST1.0">
+                                <img src="imgsrc/adidas/male/ULTRABOOST 1.0 SHOES.png" alt="ULTRABOOST1.0" style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>ULTRABOOST 1.0 SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+    
+                        <a href="sneakerFile/sneaker4.html">
+                            <div class="sneaker adidas male black all"  id="LITERACER4.0">
+                                <img src="imgsrc/adidas/male/LITE RACER ADAPT 4.0 SHOES.png" alt="LITERACER4.0" style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>LITE RACER ADAPT 4.0 SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+                        
+                        <a href="sneakerFile/sneaker5.html">
+                            <div class="sneaker adidas male black all"  id="SWIFTRUNSHOES">
+                                <img src="imgsrc/adidas/male/SWIFT RUN SHOES.png" alt="SWIFTRUNSHOES" style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>SWIFT RUN SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+    
+                        <a href="sneakerFile/sneaker6.html">
+                            <div class="sneaker adidas female black all"  id="MULTIXSHOES">
+                                <img src="imgsrc/adidas/female/MULTIX SHOES.png" alt="MULTIXSHOES"  style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>MULTIX SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+    
+                        <a href="sneakerFile/sneaker7.html">
+                            <div class="sneaker adidas female pink all highRating"  id="ULTRABOOSTDNASHOES">
+                                <img src="imgsrc/adidas/female/ULTRABOOST DNA SHOES.png" alt="ULTRABOOSTDNASHOES"  style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>ULTRABOOST DNA SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+    
+                        <a href="sneakerFile/sneaker8.html">
+                            <div class="sneaker adidas female red all" id="ULTRA4DFWDRUNNINGSHOES" > 
+                                <img src="imgsrc/adidas/female/ULTRA 4DFWD RUNNING SHOES.png" alt="ULTRA4DFWDRUNNINGSHOES" style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>ULTRA 4DFWD RUNNING SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+    
+                        <a href="sneakerFile/sneaker9.html">
+                            <div class="sneaker adidas female yellow all highRating" id="NMD_R1SHOES">
+                                <img src="imgsrc/adidas/female/NMD_R1 SHOES.png" alt="NMD_R1SHOES"  style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>NMD_R1 SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+    
+                        <a href="sneakerFile/sneaker10.html">
+                            <div class="sneaker adidas female wheat all" id="GRANDCOURTCLOUDFOAMLIFESTYLECOURTCOMFORTSHOES">
+                                <img src="imgsrc/adidas/female/GRAND COURT CLOUDFOAM LIFESTYLE COURT COMFORT SHOES.png" alt="GRANDCOURTCLOUDFOAMLIFESTYLECOURTCOMFORTSHOES"  style="width: 100%;">
+                                <h2>Adidas</h2>
+                                <h4>CLOUDFOAM LIFESTYLE COURT COMFORT SHOES</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+                        
+                        <a href="sneakerFile/sneaker11.html">
+                            <div class="sneaker vans male black all hot highRating" id="BLACKCLASSIC_OLDSKOOL_1">
+                                <img src="imgsrc/vans/male/blackclassic_OldSkool_1.jpg" alt="blackclassic_OldSkool_1" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>blackclassic_OldSkool_1</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker12.html">
+                            <div class="sneaker vans male black all hot" id="COSMICCHECKOLDSKOOL_1">
+                                <img src="imgsrc/vans/male/CosmicCheckOldSkool_1.jpg" alt="CosmicCheckOldSkool_1" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>CosmicCheckOldSkool_1</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker13.html">
+                            <div class="sneaker vans male white all" id="CRAYOLACOMFYCUSHOLDSKOOL_1">
+                                <img src="imgsrc/vans/male/CrayolaComfycushOldSkool_1.jpg" alt="CrayolaComfycushOldSkool_1" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>CrayolaComfycushOldSkool_1</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker14.html">
+                            <div class="sneaker vans male white all" id="JUNGLECLASH_01">
+                                <img src="imgsrc/vans/male/JungleClash_01.jpg" alt="JungleClash_01" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>JungleClash_01</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker15.html">
+                            <div class="sneaker vans male green all" id="MINTCLASSIC_OLDSKOOL_1">
+                                <img src="imgsrc/vans/male/mintclassic_OldSkool_1.jpg" alt="mintclassic_OldSkool_1" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>mintclassic_OldSkool_1</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker16.html">
+                            <div class="sneaker vans female white all" id="SKATECLASSIC_1">
+                                <img src="imgsrc/vans/female/Skateclassic_1.jpg" alt="Skateclassic_1" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>Skateclassic_1</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker17.html">
+                            <div class="sneaker vans female black all" id="SLIPON_3">
+                                <img src="imgsrc/vans/female/SLIPON_3.jpg" alt="SLIPON_3" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>SLIPON_3</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker18.html">
+                            <div class="sneaker vans female grey all" id="VANSXDANIELJOHNSTON_1">
+                                <img src="imgsrc/vans/female/VansxDanielJohnston_1.jpg" alt="VansxDanielJohnston_1" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>VansxDanielJohnston_1</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker19.html">
+                            <div class="sneaker vans female orange all" id="VANSXONEPIECE_1">
+                                <img src="imgsrc/vans/female/VANSXONEPIECE_1.jpg" alt="VANSXONEPIECE_1" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>VANSXONEPIECE_1</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker20.html">
+                            <div class="sneaker vans female yellow all" id="VANSXSPONGEBOB_1">
+                                <img src="imgsrc/vans/female/VANSXSPONGEBOB_1.jpg" alt="VANSXSPONGEBOB_1" style="width: 100%;">
+                                <h2>Vans</h2>
+                                <h4>VANSXSPONGEBOB_1</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker21.html">
+                            <div class="sneaker nike male black white all" id="NIKEBLAZERMID'77JUMBO">
+                                <img src="imgsrc/Nike/male/Nike Blazer Mid '77 Jumbo.jpeg" alt="NikeBlazerMid'77Jumbo" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Nike Blazer Mid '77 Jumbo</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker22.html">
+                            <div class="sneaker nike male silver green all" id="NIKEAIRMAXTERRASCAPE97">
+                                <img src="imgsrc/Nike/male/Nike Air Max Terrascape 97.PNG" alt="Nike Air Max Terrascape 97" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Nike Air Max Terrascape 97</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker23.html">
+                            <div class="sneaker nike male black white all" id="NIKEAIRFORCE1MIDREACT">
+                                <img src="imgsrc/Nike/male/Nike Air Force 1 Mid React.PNG" alt="Nike Air Force 1 Mid React" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Nike Air Force 1 Mid React</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker24.html">
+                            <div class="sneaker nike male purple all" id="NIKEAIRMAXTERRASCAPEPLUS">
+                                <img src="imgsrc/Nike/male/Nike Air Max Terrascape Plus.PNG" alt="Nike Air Max Terrascape Plus" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Nike Air Max Terrascape Plus</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker25.html">
+                            <div class="sneaker nike male yellow black all highRating" id="AIRJORDAN1MIDSE">
+                                <img src="imgsrc/Nike/male/Air Jordan 1 Mid SE.PNG" alt="AIR JORDAN 1 MID SE" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Air Jordan 1 Mid SE</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker26.html">
+                            <div class="sneaker nike female purple wheat all" id="AIRJORDAN1ELEVATEHIGH">
+                                <img src="imgsrc/Nike/female/Air Jordan 1 Elevate High.PNG" alt="AIR JORDAN 1 ELEVATE HIGH" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Air Jordan 1 Elevate High</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker27.html">
+                            <div class="sneaker nike female purple black all" id="NIKEAIRMAXFLYKNITRACER">
+                                <img src="imgsrc/Nike/female/Nike Air Max Flyknit Racer.PNG" alt="NIKE AIR MAX FLYKNIT RACER" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Nike Air Max Flyknit Racer</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker28.html">
+                            <div class="sneaker nike female purple wheat all" id="NIKEAIRMAXKOKO">
+                                <img src="imgsrc/Nike/female/Nike Air Max Koko.PNG" alt="NIKE AIR MAX KOKO" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Nike Air Max Koko</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker29.html">
+                            <div class="sneaker nike female red black all" id="NIKEAF-1SHADOW">
+                                <img src="imgsrc/Nike/female/Nike AF-1 Shadow.PNG" alt="Nike AF-1 Shadow" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Nike AF-1 Shadow</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker30.html">
+                            <div class="sneaker nike female pink purple all" id="NIKESUPERREPCYCLE2NEXTNATURE">
+                                <img src="imgsrc/Nike/female/Nike SuperRep Cycle 2 Next Nature.PNG" alt="Nike SuperRep Cycle 2 Next Nature" style="width: 100%;">
+                                <h2>Nike</h2>
+                                <h4>Nike SuperRep Cycle 2 Next Nature</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker31.html">
+                            <div class="sneaker puma female blue all" id="PUMAXAMIRIDERFVSNEAKERS">
+                                <img src="imgsrc/puma/female/PUMA x AMI Rider FV Sneakers.jpg" alt="PUMA X AMI RIDER FV SNEAKERS" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>PUMA x AMI Rider FV Sneakers</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker32.html">
+                            <div class="sneaker puma female pink all" id="MUSEMETALWOMEN’STRAINERS">
+                                <img src="imgsrc/puma/female/Muse Metal Women Trainers.jpg" alt="MUSE METAL WOMEN’S TRAINERS" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>Muse Metal Women’s Trainers</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker33.html">
+                            <div class="sneaker puma female green all hot" id="PUMAXPOKÉMONRIDERFVBULBASAURSNEAKERS">
+                                <img src="imgsrc/puma/female/PUMA x POKON Rider FV Bulbasaur Sneakers .jpg" alt="PUMA X POKÉMON RIDER FV BULBASAUR SNEAKERS" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>PUMA x POKÉMON Rider FV Bulbasaur Sneakers</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker34.html">
+                            <div class="sneaker puma female yellow all highRating hot" id="PUMAXPOKÉMONRIDERFVPIKACHUSNEAKERS">
+                                <img src="imgsrc/puma/female/PUMA x POKON Rider FV Pikachu Sneakers.jpg" alt="PUMA X POKÉMON RIDER FV PIKACHU SNEAKERS" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>PUMA x POKÉMON Rider FV Pikachu Sneakers</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker35.html">
+                            <div class="sneaker puma female red all" id="HARROWWOMEN'SSHOES">
+                                <img src="imgsrc/puma/female/Harrow Women's Shoes .jpg" alt="HARROW WOMEN'S SHOES" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>Harrow Women's Shoes</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker36.html">
+                            <div class="sneaker puma male black all" id="PUMARELAXMEN'SSLIP-ONSHOES">
+                                <img src="imgsrc/puma/male/PUMA Relax Men's Slip-On Shoes.jpg" alt="PUMA RELAX MEN'S SLIP-ON SHOES" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>PUMA Relax Men's Slip-On Shoes</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker37.html">
+                            <div class="sneaker puma male grey all highRating" id="PUMAFIREV2MEN'SSHOES">
+                                <img src="imgsrc/puma/male/Puma Fire V2 Men's Shoes.jpg" alt="PUMA FIRE V2 MEN'S SHOES" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>Puma Fire V2 Men's Shoes</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker38.html">
+                            <div class="sneaker puma male white all" id="SMASHV2TRAINERS">
+                                <img src="imgsrc/puma/male/Smash v2 Trainers.jpg" alt="SMASH V2 TRAINERS" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>Smash v2 Trainers</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker39.html">
+                            <div class="sneaker puma male black orange all" id="BLAZEOFGLORY(REVERSE CLASSICS)TRAINERS">
+                                <img src="imgsrc/puma/male/Blaze of Glory (Reverse Classics) Trainers .jpg" alt="BLAZE OF GLORY (REVERSE CLASSICS) TRAINERS" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>Blaze of Glory "Reverse Classics" Trainers</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                        <a href="sneakerFile/sneaker40.html">
+                            <div class="sneaker puma male rainbow all" id="RS-ZTRAINERS">
+                                <img src="imgsrc/puma/male/RS-Z Trainers.jpg" alt="RS-Z TRAINERS" style="width: 100%;">
+                                <h2>Puma</h2>
+                                <h4>RS-Z Trainers</h4>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star empty"></span>
+                                <span class="fa fa-star empty"></span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>        
+            </div>
+        </div>
+
+        <script src="search.js">
+            
+        </script>
+    </body>
+
+    <footer>
+        <div style="float:left">
+            &#169; &nbsp&nbsp&nbsp Copyright Sneaker Hunt 
+        </div>
+        
+        <div style="float: right;padding-bottom: 60px;">
+            <a href="termandcondition.html" style="color: white;">Terms and condition</a> &nbsp&nbsp&nbsp&nbsp
+            <a href="aboutus.html" style="color: white;">About us</a> &nbsp&nbsp&nbsp&nbsp
+            <a href="contactus.html" style="color: white;">Contact us</a> &nbsp&nbsp&nbsp&nbsp
+        </div>
+    </footer>
+</html>
