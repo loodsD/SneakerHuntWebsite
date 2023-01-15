@@ -8,7 +8,10 @@
     background-image: linear-gradient(lightblue,yellow);    
 }
 
-
+#sneaker{
+    height: 100%;
+    width: 90%;
+}
 
 #name{
    top: 8%;
