@@ -90,23 +90,36 @@ const womenSneakerName = [
     "PUMA x POKON Rider FV Pikachu Sneakers"
 ];
 
-var gender = "men";
+var gender = "";
 function verifyGender(){
     var male = document.getElementById("men");  
-  var female = document.getElementById("women");  
+  var female = document.getElementById("women"); 
+  if(male.checked == false && female.checked == false) {
+     alert("Please refresh this page and select a gender. 😊");
+  }
    if(female.checked == true){
         gender = "women";
+   }else if(male.checked == true){
+        gender="men"
    }
    return gender;
 }
 
 function displayImage(){   
-    var pic = menSneakers;
-    var desc = maleSneakerName;
+     var male = document.getElementById("men");  
+     var female = document.getElementById("women"); 
+     if(male.checked == false && female.checked == false) {
+        alert("Please refresh this page and select a gender. 😊");
+     }
+    var pic = "";
+    var desc = "";
     if(verifyGender() == "women"){
          pic = womenSneakers;
          desc = womenSneakerName;
-    }       
+    }else if(verifyGender() == "men"){
+     pic = menSneakers;
+     desc = maleSneakerName;
+    }
     var i = Math.floor(Math.random()*pic.length);
     document.getElementById("name").innerHTML = 'Get yourself a pair of '+desc[i]+'! 😍';
     document.getElementById("sneaker").src = pic[i];
