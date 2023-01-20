@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="randomstyle.css">
+
+</head>
+
+<body>
+
+    <div class="navigationTop">
+        <a href="Homepage.html"><img src="imgsrc/logo.jfif"></a>
+        <ul class="top">
+            <li class="page"><a href="Homepage.html">Home</a></li>
+            <li class="page"><a href="filterpage.html">Sneaker</a></li>
+            <li class="page w3-grey"><a href="randomgenerator.html">Random Sneaker Generator</a></li>
+            <li class="search">
+                <form action="filterpage.html" method="get">
+                    <input type="text" size="35" placeholder="Search" style="margin-top:17px" name="sneaker">&nbsp&nbsp
+                    <button type="submit" style="float:right;margin-top: 17px;"><i class="fa fa-search"></i></button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div class="popup">
+        <button id="close">&times;</button>
+        <h2>Don't know which pair to purchase? 🤔</h2>
+        <h3>Try out this random generator! 👟❓</h3>
+
+        <p style="text-align: center;"><label for="men">Men 👨‍🦱 </label><input type="radio" id="men" value="men"
+                name="gender"></p>
+        <p style="text-align: center;"><label for="women">Women 👩 </label><input type="radio" id="women" value="women"
+                name="gender"></p>
+        <button class="ok" onclick="verifyGender()">OK</button>
+
+
+    </div>
+    <script>
+
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                100
+            )
+        });
+
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+
+        document.querySelector(".ok").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+
+    </script>
+    <div class="img">
+        <h1 id="name"> </h1><a id="link"><img id="sneaker"></a>
+    </div><br><br><br><br><br><br><br>
+    <button class="random" id="GeneratorButton" onclick="displayImage()">Generate</button><br><br>
+    <script src="random.js"></script>
+</body>
+<footer>
+    <div style="float:left">
+        &#169; &nbsp&nbsp&nbsp Copyright Sneaker Hunt
+    </div>
+
+    <div style="float: right;padding-bottom: 60px;">
+        <a href="termandcondition.html" style="color: white;">Terms and condition</a> &nbsp&nbsp&nbsp&nbsp
+        <a href="aboutus.html" style="color: white;">About us</a> &nbsp&nbsp&nbsp&nbsp
+        <a href="contactus.html" style="color: white;">Contact us</a> &nbsp&nbsp&nbsp&nbsp
+    </div>
+</footer>
+
+</html>
